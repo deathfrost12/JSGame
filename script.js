@@ -139,10 +139,9 @@ const initializer = () => {
         //číslo na ASCII[A-Z]
         button.innerText = String.fromCharCode(i);
         //kliknutí na tlačítko písmena
-        document.addEventListener("keyup", (event) => {
-  let pressedKey = event.key.toUpperCase();
-  let charArray = chosenWord.split("");
-  let dashes = document.getElementsByClassName("dashes");
+        button.addEventListener("click", () => {
+            let charArray = chosenWord.split("");
+            let dashes = document.getElementsByClassName("dashes");
             //pokud pole obsahuje clicked hodnotu, nahradí odpovídající pomlčku písmenem
             if (charArray.includes(button.innerText)) {
                 charArray.forEach((char, index) => {
